@@ -1,0 +1,33 @@
+/*
+-- Before stopping and dropping the sessions
+SELECT *
+FROM   [sys].[dm_xe_sessions]
+WHERE  [name] LIKE 'sql_cpu_histrogram%'
+ORDER BY [name] DESC;
+
+DROP EVENT SESSION [sql_cpu_histrogram_0_00000] ON SERVER;
+DROP EVENT SESSION [sql_cpu_histrogram_LT50_00025] ON SERVER;
+DROP EVENT SESSION [sql_cpu_histrogram_GT50LT101_00075] ON SERVER;
+DROP EVENT SESSION [sql_cpu_histrogram_GT100LT201_00150] ON SERVER;
+DROP EVENT SESSION [sql_cpu_histrogram_GT200LT351_00275] ON SERVER;
+DROP EVENT SESSION [sql_cpu_histrogram_GT350LT501_00425] ON SERVER;
+DROP EVENT SESSION [sql_cpu_histrogram_GT500LT751_00625] ON SERVER;
+DROP EVENT SESSION [sql_cpu_histrogram_GT750LT1001_00875] ON SERVER;
+DROP EVENT SESSION [sql_cpu_histrogram_GT1000LT1501_01250] ON SERVER;
+DROP EVENT SESSION [sql_cpu_histrogram_GT1500LT2001_01750] ON SERVER;
+DROP EVENT SESSION [sql_cpu_histrogram_GT2000LT3001_02500] ON SERVER;
+DROP EVENT SESSION [sql_cpu_histrogram_GT3000LT5001_04000] ON SERVER;
+DROP EVENT SESSION [sql_cpu_histrogram_GT5000LT7501_06250] ON SERVER;
+DROP EVENT SESSION [sql_cpu_histrogram_GT7500LT10001_08750] ON SERVER;
+DROP EVENT SESSION [sql_cpu_histrogram_GT10000LT15001_12500] ON SERVER;
+DROP EVENT SESSION [sql_cpu_histrogram_GT15000LT20001_17500] ON SERVER;
+DROP EVENT SESSION [sql_cpu_histrogram_GT20000LT30001_25000] ON SERVER;
+DROP EVENT SESSION [sql_cpu_histrogram_GT30000_30000] ON SERVER;
+
+-- After stopping and dropping the sessions
+SELECT *
+FROM   [sys].[dm_xe_sessions]
+WHERE  [name] LIKE 'sql_cpu_histrogram%'
+ORDER BY [name] DESC;
+
+*/
